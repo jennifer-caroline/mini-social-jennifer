@@ -1,19 +1,48 @@
-    let likeCount = 0;
-    let curtido = false; // flag booleana
+const likeBtn = document.querySelector(".likeBtn");
+const dislikeBtn = document.querySelector(".dislikeBtn");
+const countSpan = document.querySelector(".likeCount");
 
-    function curtir() {
+let count = 0;
+let liked = false;
+let disliked = false;
 
-      if(curtido == false){
-        likeCount++;
-        curtido = true;
-        document.getElementById("likeCount").innerText = likeCount;
-      }else{
-        likeCount--;
-        curtido = false;
-        document.getElementById("likeCount").innerText = likeCount;
-      }
+likeBtn.addEventListener("click", function() {
 
+  if (!liked) {
+    liked = true;
+    likeBtn.classList.add("liked");
+    count++;
+
+    if (disliked) {
+      disliked = false;
+      dislikeBtn.classList.remove("disliked");
     }
 
-    document.getElementById("likeBtn").addEventListener("click", curtir);
- 
+  } else {
+    liked = false;
+    likeBtn.classList.remove("liked");
+    count--;
+  }
+
+  countSpan.textContent = count;
+});
+
+dislikeBtn.addEventListener("click", function() {
+
+  if (!disliked) {
+    disliked = true;
+    dislikeBtn.classList.add("disliked");
+
+    if (liked) {
+      liked = false;
+      likeBtn.classList.remove("liked");
+      count--;
+    }
+
+  } else {
+    disliked = false;
+    dislikeBtn.classList.remove("disliked");
+  }
+
+  countSpan.textContent = count;
+});
