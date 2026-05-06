@@ -7,123 +7,143 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  background: #f0f2f5;
-  margin: 0;
-}
-
-header {
-  background: #148aeb;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-.feed {
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-.post {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.post-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.avatar {
-  width: 50px;
-  border-radius: 50%;
-}
-
-.name {
-  font-weight: bold;
-}
-
-.username {
-  color: gray;
-  font-size: 14px;
-}
-
-.post-text {
-  margin: 15px 0;
-}
-
-.post-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-button {
-  border: none;
-  padding: 8px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.likeBtn {
-  background: #0984b9;
-}
-
-.dislikeBtn {
-  background: #0678a8;
-}
-
-.liked {
-  background: #7abfff;
-  color: white;
-}
-
-.disliked {
-  background: #d6303071;
-  color: white;
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-  <h1>Mini Social 💙​</h1>
-</header>
-
-<main class="feed">
-
-  <article class="post">
-
-    <div class="post-header">
-      <!-- chel -->
-     <img src="assets/georgia.jpg" class="avatar">"
-
-      <div>
-        <span class="name">jenni.sntss</span><br>
-        <span class="username">@jennita</span>
-      </div>
-    </div>
-
-    <p class="post-text">
-      Coração leve e alma tranquila 💙​
-    </p>
-
-    <div class="post-actions">
-      <button class="likeBtn">👍 Curtir</button>
-      <button class="dislikeBtn">👎 Descurtir</button>
-      <span class="likeCount">0</span>
-    </div>
-
-  </article>
-
-</main>
-
-<script src="js/script.js"></script>
-</body>
-</html>
-
+    background: #f0f2f5;
+      margin: 0;
+      }
+      
+      header {
+        background: #148aeb;
+          color: white;
+            padding: 15px;
+              text-align: center;
+              }
+              
+              .feed {
+                max-width: 500px;
+                  margin: 20px auto;
+                  }
+                  
+                  .post {
+                    background: white;
+                      padding: 15px;
+                        border-radius: 10px;
+                          margin-bottom: 20px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                            }
+                            
+                            .post-header {
+                              display: flex;
+                                align-items: center;
+                                  gap: 10px;
+                                  }
+                                  
+                                  .avatar {
+                                    width: 50px;
+                                      border-radius: 50%;
+                                      }
+                                      
+                                      .name {
+                                        font-weight: bold;
+                                        }
+                                        
+                                        .username {
+                                          color: gray;
+                                            font-size: 14px;
+                                            }
+                                            
+                                            .post-text {
+                                              margin: 15px 0;
+                                              }
+                                              
+                                              .post-actions {
+                                                display: flex;
+                                                  align-items: center;
+                                                    gap: 10px;
+                                                    }
+                                                    
+                                                    button {
+                                                      border: none;
+                                                        padding: 8px 12px;
+                                                          border-radius: 20px;
+                                                            cursor: pointer;
+                                                            }
+                                                            
+                                                            .likeBtn {
+                                                              background: #0984b9;
+                                                              }
+                                                              
+                                                              .dislikeBtn {
+                                                                background: #0678a8;
+                                                                }
+                                                                
+                                                                .liked {
+                                                                  background: #7abfff;
+                                                                    color: white;
+                                                                    }
+                                                                    
+                                                                    .disliked {
+                                                                      background: #d6303071;
+                                                                        color: white;
+                                                                        }
+                                                                        </style>
+                                                                        
+                                                                        </head>
+                                                                        
+                                                                        <body>
+                                                                        
+                                                                        <header>
+                                                                          <h1>Mini Social 💙​</h1>
+                                                                          </header>
+                                                                          
+                                                                          <main class="feed">
+                                                                          
+                                                                            <article class="post">
+                                                                            
+                                                                                <div class="post-header">
+                                                                                      <!-- chel -->
+                                                                                           <img src="assets/georgia.jpg" class="avatar">"
+                                                                                           
+                                                                                                 <div>
+                                                                                                         <span class="name">jenni.sntss</span><br>
+                                                                                                                 <span class="username">@jennita</span>
+                                                                                                                       </div>
+                                                                                                                           </div>
+                                                                                                                           
+                                                                                                                               <p class="post-text">
+                                                                                                                                     Coração leve e alma tranquila 💙​
+                                                                                                                                         </p>
+                                                                                                                                         
+                                                                                                                                             <div class="post-actions">
+                                                                                                                                                   <button id="likeBtn">👍 Curtir</button>
+                                                                                                                                                         <span id="likeCount">0</span>
+                                                                                                                                                             </div>
+                                                                                                                                                             
+                                                                                                                                                                 <div class="post-actions">
+                                                                                                                                                                       <button id="deslikeBtn">👎🏽​ descurtir</button>
+                                                                                                                                                                             <span id="deslikeCount">0</span>
+                                                                                                                                                                                 </div>
+                                                                                                                                                                                 
+                                                                                                                                                                                     <section class="comments">
+                                                                                                                                                                                           <div class="comment">
+                                                                                                                                                                                                  
+                                                                                                                                                                                                          <p>Acredite que você pode, assim você já está no meio do caminho🔥</p>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                      <div class="comment">
+                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                <p>alegria!</p>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                          </section>
+                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                            </article>
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                            </main>
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                            <script src="js/script.js"></script>
+                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                            </html>
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                   >

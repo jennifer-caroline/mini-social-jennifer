@@ -1,48 +1,85 @@
-const likeBtn = document.querySelector(".likeBtn");
-const dislikeBtn = document.querySelector(".dislikeBtn");
-const countSpan = document.querySelector(".likeCount");
+//=== BANCO DE DADOS (JSON Simulado) === 
 
-let count = 0;
-let liked = false;
-let disliked = false;
+let post = {
+   likeCount: 0,
+   dislikeCount: 0,
+   curtido:false,
+   descurtido: false
+}
 
-likeBtn.addEventListener("click", function() {
+//=== SERVICE (regras de negócio) === 
 
-  if (!liked) {
-    liked = true;
-    likeBtn.classList.add("liked");
-    count++;
+function curtir() {
+  if (post.curtido == false){
+    post.likeCount++;
+    post.curtido = true;
 
-    if (disliked) {
-      disliked = false;
-      dislikeBtn.classList.remove("disliked");
+    if(post.descurtido == true){
+      post.dislikeCount--;
+      post.descurtido = false;
     }
 
-  } else {
-    liked = false;
-    likeBtn.classList.remove("liked");
-    count--;
+  }else{
+    post.likeCount--;
+    post.curtido = false;
   }
 
-  countSpan.textContent = count;
-});
+}
 
-dislikeBtn.addEventListener("click", function() {
+function descurtir() {
+  if(post.descurtido == false){
+    post.dislikeCount++;
+    post.descurtido = true;
 
-  if (!disliked) {
-    disliked = true;
-    dislikeBtn.classList.add("disliked");
-
-    if (liked) {
-      liked = false;
-      likeBtn.classList.remove("liked");
-      count--;
+    if(post.curtido == true){
+      post.likeCount--;
+      post.curtido = false;
     }
 
-  } else {
-    disliked = false;
-    dislikeBtn.classList.remove("disliked");
   }
+  else{
+    post.dislikeCount--;
+    post.descurtido = false;
+  }
+}
 
-  countSpan.textContent = count;
-});
+//=== API SIMULADA ===
+
+function getPost(){
+   return post;
+}
+
+function likePost(){
+   curtir();
+   return post;
+}
+
+function dislikePost(){
+   descurtit();
+   return post;
+}
+// === VIEW (interface/renderização)===
+function atualizarTela(){
+  document.getElementById("likeCount").innerText = likeCount;
+  document.getElementById("dislikeCount").innerText = dislikeCount;
+}
+
+//=== CONTROLLER (intermediação)===
+
+function clicarCurtir(){
+  curtir();
+  atualizarTela();
+}
+function clicarDescurtir(){
+  descurtir();
+  atualizarTela();
+}
+
+// === EVENTOS ===
+
+document.getElementById("likeBtn").addEventListener("click", clicarCurtir);
+document.getElementById("dislikeBtn").addEventListener("click", clicarDescurtir);
+
+// === INICIALIZAÇÃO ===  
+
+atualizarTela();
